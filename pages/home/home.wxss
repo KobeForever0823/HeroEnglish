@@ -1,0 +1,29 @@
+/* home.wxss */
+page {
+  background-color: #2F5597;
+  height: 100%;
+}
+
+.top-container {
+  width: 100%;
+  left: 0;
+  position:fixed;
+}
+
+.top-img {
+  padding-left: 100rpx;
+}
+
+.home-scroll-view-container {
+  height: 700rpx;
+  width: 750rpx;
+  text-align: center;
+}
+
+.home-img {
+  height: 50rpx;
+  width: 500rpx; 
+  padding-bottom: 30rpx;
+}
+
+

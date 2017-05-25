@@ -1,0 +1,30 @@
+.footbar-content {
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  position: absolute;
+  background: url('http://omi5dzcil.bkt.clouddn.com/FooterBar.png');
+}
+
+.footbar-content {
+  width: 750rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+/*.footbar-img-container {
+  width: 750rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}*/
+
+.footbar-img {
+  flex: 1;
+  padding-left: 30rpx;
+  width: 150rpx;
+  height: 80rpx;
+}

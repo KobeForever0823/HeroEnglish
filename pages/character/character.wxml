@@ -1,0 +1,25 @@
+<!--character.wxml-->
+<view class="character-container">
+  <view class="map-container">
+    <image mode="widthFix" class="map-img" src="../../images/MapImages/Map1.png"></image>
+  </view>
+  <view class="middle-text-container">
+    <text class="middle-text">NORTHERN CASTLE</text>
+  </view>  
+  <view class="button-img">
+    <scroll-view class="scroll-view_C" scroll-x="true" scroll-with-animation="true">
+      <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent" 
+            src="../../images/ButtonImages/Button1.png"></image>
+      <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent"
+            src="../../images/ButtonImages/Button2.png"></image>
+      <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent"
+            src="../../images/ButtonImages/Button3.png"></image>
+      <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent"
+            src="../../images/ButtonImages/Button3.png"></image>
+    </scroll-view>
+  </view>
+</view>
+
+
+<import src="../component/footbar/footbar.wxml" />
+<template is="footbar"></template>

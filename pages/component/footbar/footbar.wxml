@@ -1,0 +1,9 @@
+<template name="footbar">
+  <view class="footbar-content" >
+      <image mode="widthFix" class="footbar-img" src="../../../images/footer/Storeicon.png"></image>
+      <image mode="widthFix" class="footbar-img" src="../../../images/footer/Homepageicon.png"></image>
+      <image mode="widthFix" class="footbar-img" src="../../../images/footer/TestPage.png"></image>
+     
+  </view>
+
+</template>

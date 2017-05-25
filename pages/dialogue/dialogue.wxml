@@ -1,0 +1,10 @@
+<!--pages/dialogue/dialogue.wxml-->
+
+
+
+
+
+
+
+<import src="../component/footbar/footbar.wxml" />
+<template is="footbar"></template>

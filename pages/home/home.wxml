@@ -1,0 +1,21 @@
+<!--home.wxml-->
+<view class="page">
+  <view class="top_container">
+    <image class="top-img" src="../../../images/Home/HomePage1.png"></image>
+  </view>
+
+  <view class="options">
+    <scroll-view class="home-scroll-view-container" scroll-y="true"
+    scroll-with-animation="true">
+      <image class="home-img" mode="widthFix"  src="../../../images/Home/HomePage2.png" ></image>
+      <navigator url="/pages/map/map" class="home-navigator">
+        <image class="home-img" mode="widthFix" src="../../../images/Home/HomePage3.png" ></image>
+      </navigator>
+    </scroll-view>
+  </view>
+  
+
+</view>
+
+<import src="../component/footbar/footbar.wxml" />
+<template is="footbar"></template>

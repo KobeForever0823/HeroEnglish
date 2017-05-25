@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/component/footbar/footbar",
+    "pages/map/map",
+    "pages/dialogue/dialogue",
+    "pages/character/character"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Hero English",
+    "navigationBarTextStyle": "white"
+  }
+}

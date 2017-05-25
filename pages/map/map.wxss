@@ -1,0 +1,10 @@
+/* map.wxss */
+.map-navigator {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.item-img {
+  height: 810rpx;
+}
