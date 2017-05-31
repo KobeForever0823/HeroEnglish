@@ -17,7 +17,6 @@
   </view>
   <view class="buttons">
     <loading hidden="{{hidden}}"> Uploading... </loading>
-    
     <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == true}}"src="../../images/Buttons/Record_Grey.png"></image>
     <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == false}}" bindtap="recordClick" src="../../images/Buttons/Record.png" ></image>
     <image wx:if="{{isUploadOver == false}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next_Grey.png"></image>

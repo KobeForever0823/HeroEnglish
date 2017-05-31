@@ -36,7 +36,8 @@ Page({
     },
     totalText: 0,
     hidden: true,
-    timeLimit: 1000
+    timeLimit: 1000,
+    timeRemain: 1000
   },
 
   /**
@@ -53,24 +54,57 @@ Page({
     
   },
 
+  countDown: function() {
+    var _this = this
+    var second = _this.data.timeRemain
+    if (second == 0) {
+      wx.showModal({
+        title: 'Tips!',
+        content: 'Do you want to upload this recording?',
+        showCancel: true,
+        canCelText: 'Cancel',
+        confirmText: 'Confirm',
+        success: function (res) {
+          if (res.confirm) {
+            setTimeout(function () {
+              _this.setData({
+                hidden: true,
+                isUploadOver: true
+              });
+            }, _this.data.timeLimit);
+          } else if (res.cancel) {
+          }
+        }
+      }) 
+      return;
+    }
+
+    setTimeout(function() {
+      console.log(_this.data.timeRemain)
+      _this.setData({
+        timeRemain: timeRemain - 1
+      });
+      _this.countDown();
+      
+    }, 100)
+  },
+
   recordClick: function(options) {
     var _this = this;
     _this.setData({
       hidden: false,
     });
-    
-    setTimeout(function() {
-      _this.setData({
-        hidden: true,
-        isUploadOver: true
-      });
-    }, _this.data.timeLimit);
+
+    _this.countDown();
   },
 
   nextClick: function(options) {
     
   }, 
 
+  countdown: function(options) {
+    
+  },
 
   /**
    * 生命周期函数--监听页面显示
