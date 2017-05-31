@@ -77,13 +77,13 @@ Page({
    */
   onShow: function () {
     this.setData({
-      isRecordStart: 'false',
-      isRecordOver: 'false',
-      isUploadOver: 'false',
+      isRecordStart: false,
+      isRecordOver: false,
+      isUploadOver: false,
       currentText: {
         id: 0,
-        speakingText: this.data.isRecordOver,
-        speechText: this.data.isUploadOver
+        speakingText: this.data.isRecordOver + '',
+        speechText: this.data.isUploadOver + ''
       }
     })
   },
