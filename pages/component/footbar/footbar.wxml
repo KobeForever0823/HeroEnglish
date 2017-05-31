@@ -1,9 +1,14 @@
 <template name="footbar">
   <view class="footbar-content" >
+    <navigator class="footbar-img-container">
       <image mode="widthFix" class="footbar-img" src="../../../images/footer/Storeicon.png"></image>
+    </navigator>
+    <navigator class="footbar-img-container" url="../../home/home" open-type="redirect">
       <image mode="widthFix" class="footbar-img" src="../../../images/footer/Homepageicon.png"></image>
+    </navigator>
+    <navigator class="footbar-img-container">
       <image mode="widthFix" class="footbar-img" src="../../../images/footer/TestPage.png"></image>
-     
+    </navigator>
   </view>
 
 </template>

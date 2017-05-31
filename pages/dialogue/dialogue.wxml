@@ -1,10 +1,33 @@
 <!--pages/dialogue/dialogue.wxml-->
+<view class="dialogue-container">
+  <view class="map-container">
+    <image mode="widthFix" class="dialogue-map-img" src="../../images/MapImages/Map1.png"></image>
+    <image mode="widthFix" class="dialogue-button-img" src="../../images/ButtonImages/Button1.png"></image>
+  </view>
+  
+  <view wx:if="{{currentText.speakingText != ''}}" class="dialogue-upper-text-container">
+    <view class="upper-text">
+      {{currentText.speakingText}}
+    </view>
+  </view>
+  <view class="dialogue-lower-text-container">
+    <view class="lower-text">
+      {{currentText.speechText}}
+    </view>
+  </view>
+  <view class="buttons">
+    <loading hidden="{{hidden}}"> Uploading... </loading>
+    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == 'true'}}"src="../../images/Buttons/Record_Grey.png"></image>
+    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == 'false'}}" bindtap="recordClick" src="../../images/Buttons/Record.png" ></image>
+    <image wx:if="{{isUploadOver == 'false'}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next_Grey.png"></image>
+    <image wx:if="{{isUploadOver == 'true'}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next.png" bindtap="nextClick"></image>
+  </view>
+</view>
 
 
 
 
 
 
-
-<import src="../component/footbar/footbar.wxml" />
-<template is="footbar"></template>
+<!--<import src="../component/footbar/footbar.wxml" />
+<template is="footbar"></template>-->

@@ -1,7 +1,7 @@
 /* character.wxss */
 .character-container {
   background-color: #2F5597;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .map-container {
@@ -28,15 +28,13 @@
   color: white;
 }
 
-.button-img {
-  height: 700rpx;
-  width: 100%;
+.scroll-view_C {
+  padding-top: 20rpx;
+  white-space: nowrap;
 }
 
-.scroll-view_C {
-  height: 300rpx;
-  padding-left: 20rpx;
-  padding-top: 0;
+.scroll-view-item_C {
+  padding: 30rpx;
   display: inline-block;
 }
 

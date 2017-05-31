@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/component/footbar/footbar",
-    "pages/map/map",
     "pages/dialogue/dialogue",
-    "pages/character/character"
+    "pages/grade/grade",
+    "pages/home/home",
+    "pages/map/map",
+    "pages/character/character",
+    "pages/component/footbar/footbar"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,20 @@
+<!--pages/grade/grade.wxml-->
+<view class="grade-container">
+  <scroll-view class="scroll-view_G" scroll-y="true">
+    <view class="scroll-view-item_G">
+      <text class="score-upper-text">Your Score</text>
+      <canvas class="cir" canvas-id="canvasArc"/>
+      <view id="score">{{score * 100}}%</view>
+    </view>
+  <view class="scroll-view-item_G">
+      <text class="score-lower-text">Detailed Score</text>
+      <view class="progress-bar">
+        <progress class="progress-bar-item"  percent="{{progress1}}" stroke-width="10" color="red" active="true"/>
+        <progress class="progress-bar-item"  percent="{{progress2}}"stroke-width="10" color="red" active="true"/>
+        <progress class="progress-bar-item"  percent="{{progress3}}" stroke-width="10" color="red" active="true"/>
+      </view>
+  </view>
+  <view class="scroll-view-item_G">
+  </view>
+  </scroll-view>
+</view>

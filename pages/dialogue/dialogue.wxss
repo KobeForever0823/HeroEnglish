@@ -1,1 +1,83 @@
 /* pages/dialogue/dialogue.wxss */
+.dialogue-container {
+  background-color: #2F5597;
+  min-height: 100vh;
+}
+
+.map-container {
+  text-align: center;
+  padding-top: 100rpx;
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+
+.dialogue-map-img {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.dialogue-button-img {
+  padding-top: 100rpx;
+  left: 0;
+  position: absolute;
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.dialogue-upper-text-container {
+  margin-top: 150rpx;
+  padding-top: 30rpx;
+  background: white;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+}
+
+.upper-text {
+  width: 550rpx;
+  font-size: 30rpx;
+  padding: 0 100rpx;
+}
+
+.dialogue-lower-text-container {
+  margin-top: 100rpx;
+  text-align: center;
+  padding-top: 30rpx;
+  background: white;
+  width: 100%;
+  height: 80rpx;
+}
+
+.lower-text {
+  width: 550rpx;
+  font-size: 30rpx;
+  padding: 0 100rpx;
+}
+
+.buttons {
+  margin-left: 20rpx;
+  width: 100%;
+  bottom: 0;
+}
+
+.record-button {
+  margin-left: 50rpx;
+  margin-top: 50rpx;
+  width: 200rpx;
+  height: 180rpx;
+}
+
+.next-button {
+  margin-left: 200rpx;
+  margin-top: 50rpx;
+  width: 200rpx;
+  height: 180rpx;
+}
+
+
+
+
+

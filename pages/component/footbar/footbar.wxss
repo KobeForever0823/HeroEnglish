@@ -4,27 +4,20 @@
   width: 750rpx;
   position: absolute;
   background: url('http://omi5dzcil.bkt.clouddn.com/FooterBar.png');
+  background-size: 100% 100%;
 }
 
 .footbar-content {
-  width: 750rpx;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   display: flex;
 }
 
-/*.footbar-img-container {
-  width: 750rpx;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-}*/
+.footbar-img-container {
+  flex: 1;
+  text-align: center;
+}
 
 .footbar-img {
-  flex: 1;
   padding-left: 30rpx;
   width: 150rpx;
-  height: 80rpx;
+  height: 150rpx;
 }
