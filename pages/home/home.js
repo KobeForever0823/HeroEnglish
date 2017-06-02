@@ -8,13 +8,13 @@ Page({
     home_img_list: [
     {
       h_id: 0,
-      h_url: '../../../images/Home/HomePage2.png'
+      h_url: '../../../images/Home/2.png'
     }, {
       h_id: 1,
-      h_url: '../../../images/Home/HomePage3.png'
+      h_url: '../../../images/Home/3.png'
     }, {
       h_id: 2,
-      h_url: '../../../images/Home/HomePage3.png'
+      h_url: '../../../images/Home/3.png'
     }]
   },
 

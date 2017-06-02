@@ -12,7 +12,7 @@ Page({
       id: 0,
       upperText: 'Oh',
       lowerText: 'OH',
-      timeLimit: 1000
+      timeLimit: 5000
     }, {
       id: 1,
       upperText: 'my',
@@ -80,6 +80,7 @@ Page({
     h_id: 0,
     map_id: 0,
     img_id: 0,
+    grade: 0
   },
 
   /**
@@ -89,7 +90,14 @@ Page({
     this.setData({
       map_id: options.map_id,
       img_id: options.img_id
-    })
+    });
+  },
+
+  drawProgress: function(w, c) {
+    var record_progress = wx.createCanvasContext('recordingProgress');
+    record_progress.setFillStyle('green');
+    record_progress.fillRect(10, 10, w * c, 5);
+    record_progress.draw();
   },
 
   /**
@@ -115,9 +123,12 @@ Page({
 
   showModel: function() {
     var _this = this;
+    _this.setData({
+      hidden: true
+    });
     wx.showModal({
       title: '',
-      content: '确认上传录音？',
+      content: '确认提交录音以获得成绩？',
       showCancel: true,
       cancelText: '取消',
       confirmText: '确认',
@@ -135,20 +146,21 @@ Page({
               _this.setData({
               uploading_hidden: true,
               isUploadOver: true
-            })
-            wx.showModal({
-              title: '',
-              content: '录音上传成功！',
-              showCancel: false,
-              confirmText: '确认'
-            })
+            }),
+            wx.showToast({
+              title: '你这次的得分是' + _this.data.grade,
+              image: '',
+              duration: 1500
+            });
             }
           })
         } else if (res.cancel) {
+          _this.drawProgress(0, 0);
           _this.setData({
             hidden: true,
             uploading_hidden: true,
             isUploadOver: true,
+            isRecordOver: false,
             timeRemain: _this.data.showText[_this.data.currentIndex].timeLimit
           })
         }
@@ -156,38 +168,64 @@ Page({
     })
   },
 
-  countDown: function() {
-    var _this = this
-    console.log(_this.data.timeRemain);
-    if (_this.data.timeRemain == 0) {
-      wx.stopRecord()
-      _this.showModel()
-    } else {
-      setTimeout(function(){
-        _this.setData({
-          timeRemain: _this.data.showText[_this.data.currentIndex].timeLimit - 1,
-          rate: _this.data.timeRemain / _this.data.showText[_this.data.currentIndex].timeLimit
-        });
-        this.countDown();
-      }, 10)
-    }
-  },
+  // countDown: function() {
+  //   var _this = this;
+  //   if (_this.data.timeRemain == 0) {
+  //     wx.stopRecord()
+      
+  //   } else {
+  //     setTimeout(function(){
+  //       _this.setData({
+  //         timeRemain: _this.data.timeRemain - 1,
+  //         rate: _this.data.timeRemain / _this.data.showText[_this.data.currentIndex].timeLimit
+  //       });
+        
+  //       _this.countDown();
+  //     }, 10);
+  //   }
+  // },
 
   recordClick: function(options) {
     var _this = this;
+    var count = 0;
     _this.setData({
       hidden: false,
     });
     wx.startRecord({
       success: function(res) {
+        // wx.showToast({
+        //   title: 'success',
+        //   duration: 1000
+        // })
         _this.setData({
           tempFilePath: res.tempFilePath
         })
+        console.log(_this.data.tempFilePath);
       },
       fail: function(res) {
+        // wx.showToast({
+        //   title: 'failed',
+        //   duration: 1000
+        // })
       }
-    })
-    _this.countDown();
+    });
+    var recordInterval = setInterval(function(){
+      if (count == _this.data.showText[_this.data.currentIndex].timeLimit / 1000 || _this.data.timeRemain <= 0) {
+        clearInterval(recordInterval);
+        count = 0;
+        wx.stopRecord();
+        _this.showModel();
+      } else {
+        count++;
+        _this.drawProgress(500 / (_this.data.showText[_this.data.currentIndex].timeLimit / 500), count);
+        _this.setData({
+          timeRemain: _this.data.timeRemain - 1000,
+          rate: _this.data.timeRemain / _this.data.showText[_this.data.currentIndex].timeLimit
+        });
+        console.log(_this.data.timeRemain);
+        console.log(count);
+      }
+    }, 1000);
   },
 
   nextClick: function(options) {
@@ -199,6 +237,7 @@ Page({
       _this.refreshPage();
     } else if (_this.data.pageCount == this.data.currentIndex){
       wx.redirectTo({
+        // url: '../grade/grade?grade_id=' + _this.data.grade
         url: '../grade/grade'
       })
     }
@@ -215,7 +254,7 @@ Page({
       uploading_hidden: true,
       rate: 0,
       tempFilePath: '',
-      timeRemain: this.showText[currentIndex].timeLimit
+      timeRemain: this.data.showText[this.data.currentIndex].timeLimit
     })
   }
 

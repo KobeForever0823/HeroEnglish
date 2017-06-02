@@ -77,6 +77,12 @@
   height: 180rpx;
 }
 
+.recording-progress {
+  margin: 20rpx 60rpx;
+  margin-top: 20rpx;
+  height: 100rpx;
+  width: 550rpx;
+}
 
 
 

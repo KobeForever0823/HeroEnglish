@@ -18,6 +18,7 @@
   <view class="buttons">
     <loading hidden="{{hidden}}"> 录音中... </loading>
     <loading hidden="{{uploading_hidden}}"> 上传中...请稍等</loading>
+    <canvas canvas-id="recordingProgress" class="recording-progress"/>
     <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == true || isUploadOver == true}}"src="../../images/Buttons/Record_Grey.png"></image>
     <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == false && isUploadOver == false}}" bindtap="recordClick" src="../../images/Buttons/Record.png" ></image>
     <image wx:if="{{isUploadOver == false}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next_Grey.png"></image>
