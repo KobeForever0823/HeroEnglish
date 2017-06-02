@@ -16,11 +16,14 @@ page {
   width: 650rpx;
 }
 
-
-.home-scroll-view-container {
+.scrol-view_H {
   height: 700rpx;
   width: 750rpx;
   text-align: center;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
 }
 
 .gradient {

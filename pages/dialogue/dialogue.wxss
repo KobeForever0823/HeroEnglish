@@ -65,17 +65,18 @@
 
 .record-button {
   margin-left: 50rpx;
-  margin-top: 50rpx;
+  margin-top: 10rpx;
   width: 200rpx;
   height: 180rpx;
 }
 
 .next-button {
   margin-left: 200rpx;
-  margin-top: 50rpx;
+  margin-top: 10rpx;
   width: 200rpx;
   height: 180rpx;
 }
+
 
 
 

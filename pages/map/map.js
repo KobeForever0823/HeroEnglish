@@ -5,14 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    image_list : []
+    map_list: [{
+      h_id: 0,
+      image: [{
+       map_id: 0,
+       map_image_url: '../../images/MapImages/1.png'
+      }, {
+       map_id: 1,
+       map_image_url: '../../images/MapImages/2.png'
+      }, {
+       map_id: 2,
+       map_image_url: '../../images/MapImages/3.png'
+      }, {
+       map_id: 3,
+       map_image_url: '../../images/MapImages/4.png'
+      }]
+    }],
+    h_id: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      h_id: options.h_id
+    })
   },
 
   /**

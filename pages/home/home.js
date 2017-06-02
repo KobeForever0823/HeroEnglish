@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    home_img_list: [
+    {
+      h_id: 0,
+      h_url: '../../../images/Home/HomePage2.png'
+    }, {
+      h_id: 1,
+      h_url: '../../../images/Home/HomePage3.png'
+    }, {
+      h_id: 2,
+      h_url: '../../../images/Home/HomePage3.png'
+    }]
   },
 
   /**

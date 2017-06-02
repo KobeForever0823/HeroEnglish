@@ -1,12 +1,10 @@
 {
   "pages": [
-    "pages/dialogue/dialogue",
     "pages/home/home",
-    
-    "pages/grade/grade",
-    
     "pages/map/map",
+    "pages/dialogue/dialogue",
     "pages/character/character",
+    "pages/grade/grade",
     "pages/component/footbar/footbar"
   ],
   "window": {

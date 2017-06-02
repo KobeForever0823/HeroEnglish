@@ -1,24 +1,25 @@
 <!--pages/dialogue/dialogue.wxml-->
 <view class="dialogue-container">
   <view class="map-container">
-    <image mode="widthFix" class="dialogue-map-img" src="../../images/MapImages/Map1.png"></image>
-    <image mode="widthFix" class="dialogue-button-img" src="../../images/ButtonImages/Button1.png"></image>
+    <image mode="widthFix" class="dialogue-map-img" src="{{map_list[map_id].map_url}}"></image>
+    <image mode="widthFix" class="dialogue-button-img" src="{{buttonImage[map_id].image[img_id].img_url}}"></image>
   </view>
   
-  <view wx:if="{{currentText.speakingText != ''}}" class="dialogue-upper-text-container">
+  <view wx:if="{{showText[currentIndex].upperText != ''}}" class="dialogue-upper-text-container">
     <view class="upper-text">
-      {{currentText.speakingText}}
+      {{showText[currentIndex].upperText}}
     </view>
   </view>
   <view class="dialogue-lower-text-container">
     <view class="lower-text">
-      {{currentText.speechText}}
+      {{showText[currentIndex].lowerText}}
     </view>
   </view>
   <view class="buttons">
-    <loading hidden="{{hidden}}"> Uploading... </loading>
-    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == true}}"src="../../images/Buttons/Record_Grey.png"></image>
-    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == false}}" bindtap="recordClick" src="../../images/Buttons/Record.png" ></image>
+    <loading hidden="{{hidden}}"> 录音中... </loading>
+    <loading hidden="{{uploading_hidden}}"> 上传中...请稍等</loading>
+    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == true || isUploadOver == true}}"src="../../images/Buttons/Record_Grey.png"></image>
+    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == false && isUploadOver == false}}" bindtap="recordClick" src="../../images/Buttons/Record.png" ></image>
     <image wx:if="{{isUploadOver == false}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next_Grey.png"></image>
     <image wx:if="{{isUploadOver == true}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next.png" bindtap="nextClick"></image>
   </view>

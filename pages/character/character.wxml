@@ -1,29 +1,16 @@
 <!--character.wxml-->
 <view class="character-container">
   <view class="map-container">
-    <image mode="widthFix" class="map-img" src="../../images/MapImages/Map1.png"></image>
+    <image mode="widthFix" class="map-img" src="{{map_list[map_id].url}}"></image>
   </view>
   <view class="middle-text-container">
-    <text class="middle-text">NORTHERN CASTLE</text>
+    <text class="middle-text">{{map_list[map_id].text}}</text>
   </view> 
-  
-    <scroll-view class="scroll-view_C" scroll-x="true" scroll-with-animation="true">
-      <view id="first-img" class="scroll-view-item_C">
-        <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent" 
-            src="../../images/ButtonImages/Button1.png"></image>
-      </view>
-      <view id="second-img" class="scroll-view-item_C">
-        <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent"
-            src="../../images/ButtonImages/Button2.png"></image>
-      </view>
-      <view id="third-img" class="scroll-view-item_C">
-        <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent"
-            src="../../images/ButtonImages/Button3.png"></image>
-      </view>
-      <view id="forth-img" class="scroll-view-item_C"> 
-        <image mode="widthFix" class="scroll-button-img" bindtap="imgClickEvent"
-            src="../../images/ButtonImages/Button3.png"></image>
-      </view>
+    <scroll-view class="scroll-view_C" scroll-x="true" scroll-with-animation="true" >
+      <navigator class="scroll-view-item_C" url="../dialogue/dialogue?h_id={{h_id}}&&map_id={{map_id}}&&img_id={{idx.img_id}}" 
+      wx:for="{{buttonImage[map_id].image}}" wx:for-item="idx" >
+        <image mode="widthFix" class="scroll-button-img" src="{{idx.img_url}}"></image>
+      </navigator>
     </scroll-view>
 </view>
 

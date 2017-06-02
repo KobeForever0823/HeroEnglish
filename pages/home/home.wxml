@@ -7,11 +7,9 @@
   <view style="height: 380rpx;" class="takeplace"></view>
 
   <view class="options">
-    <scroll-view class="home-scroll-view-container" scroll-y="true"
-    scroll-with-animation="true">
-      <image class="home-img" mode="widthFix"  src="../../../images/Home/HomePage2.png" ></image>
-      <navigator url="/pages/map/map" class="home-navigator">
-        <image class="home-img" mode="widthFix" src="../../../images/Home/HomePage3.png" ></image>
+    <scroll-view class="scrol-view_H" scroll-y="true" scroll-with-animation="true" >
+      <navigator url="/pages/map/map?h_id={{item.h_id}}" class="scroll-view-item_H" wx:for="{{home_img_list}}">
+        <image class="home-img" mode="widthFix" src="{{item.h_url}}" ></image>
       </navigator>
     </scroll-view>
   </view>

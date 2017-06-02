@@ -1,17 +1,8 @@
 <!--map.wxml-->
 <view class="map-page">
-  <scroll-view class="scroll-view_M" scroll-y="true" scroll-with-animation="true">
-    <navigator id="first-map" class="scroll-view-item_M" url="../character/character">
-      <image mode="widthFix" class="item-img" src="../../images/MapImages/Map1.png"></image>
-    </navigator>
-    <navigator id="second-map" class="scroll-view-item_M" url="../character/character">
-      <image mode="widthFix" class="item-img" src="../../images/MapImages/Map2.png"></image>
-    </navigator>
-    <navigator id="third-map" class="scroll-view-item_M" url="../character/character">
-      <image mode="widthFix" class="item-img" src="../../images/MapImages/Map3.png"></image>
-    </navigator>
-    <navigator id="forth-map"class="scroll-view-item_M" url="../character/character">
-      <image mode="widthFix" class="item-img" src="../../images/MapImages/Map4.png"></image>
+  <scroll-view class="scroll-view_M" scroll-y="true" scroll-with-animation="true" >
+    <navigator class="scroll-view-item_M" wx:for="{{map_list[h_id].image}}" wx:for-item="item" url="../character/character?h_id={{h_id}}&&map_id={{item.map_id}}">
+      <image mode="widthFix" class="item-img" src="{{item.map_image_url}}"></image>
     </navigator>
   </scroll-view>
 </view>
