@@ -5,22 +5,36 @@
     <image mode="widthFix" class="dialogue-button-img" src="{{buttonImage[map_id].image[img_id].img_url}}"></image>
   </view>
   
-  <view wx:if="{{showText[currentIndex].upperText != ''}}" class="dialogue-upper-text-container">
-    <view class="upper-text">
-      {{showText[currentIndex].upperText}}
-    </view>
-  </view>
-  <view class="dialogue-lower-text-container">
-    <view class="lower-text">
-      {{showText[currentIndex].lowerText}}
-    </view>
-  </view>
+
+  <swiper indicator-dots="true" vertical="true" autoplay="{{autoplay}}" interval="{{interval}}" 
+    duration="{{duration}}" class="text-swiper" current="{{currentIndex}}">
+    <block wx:for="{{showText}}">
+      <swiper-item class="text-swiper-item">
+        <view wx:if="{{ item.upperText != ''}}" class="dialogue-upper-text-container">
+          <view class="upper-text">
+            {{item.upperText}}
+          </view>
+        </view>
+        <view class="dialogue-lower-text-container">
+          <view class="lower-text">
+            {{item.lowerText}}
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
   <view class="buttons">
     <loading hidden="{{hidden}}"> 录音中... </loading>
     <loading hidden="{{uploading_hidden}}"> 上传中...请稍等</loading>
-    <canvas canvas-id="recordingProgress" class="recording-progress"/>
     <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == true || isUploadOver == true}}"src="../../images/Buttons/Record_Grey.png"></image>
     <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == false && isUploadOver == false}}" bindtap="recordClick" src="../../images/Buttons/Record.png" ></image>
+    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == false || isUploadOver == false}}" src=""></image>
+    <image class="record-button" mode="widthFix" wx:if="{{isRecordOver == true || isUploadOver == true}}" bindtap="recordClick" src=""></image>
+    <view class="countDownClock">{{clock}}</view>
+    <image wx:if="{{autoplay == false && isPause == true}}" class="auto-button" mode="widthFix" bindtap="autoClick" src=""></image>
+    <image wx:if="{{autoplay == true}}" class="auto-button" mode="widthFix" bindtap="pauseClick" src="" ></image>
+    <image wx:if="{{autoplay == true}}" class="manual-button" mode="widthFix" src=""></image>
+    <image wx:if="{{autoplay == false && isPause == true}}" class="manual-button" mode="widthFix" bindtap="manualClick" src=""></image>
     <image wx:if="{{isUploadOver == false}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next_Grey.png"></image>
     <image wx:if="{{isUploadOver == true}}" class="next-button" mode="widthFix" src="../../images/Buttons/Next.png" bindtap="nextClick"></image>
   </view>

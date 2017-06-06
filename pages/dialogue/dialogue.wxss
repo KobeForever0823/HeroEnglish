@@ -28,7 +28,7 @@
 }
 
 .dialogue-upper-text-container {
-  margin-top: 150rpx;
+  margin-top: 50rpx;
   padding-top: 30rpx;
   background: white;
   width: 100%;
@@ -39,11 +39,11 @@
 .upper-text {
   width: 550rpx;
   font-size: 30rpx;
-  padding: 0 100rpx;
+  padding: 0 50rpx;
 }
 
 .dialogue-lower-text-container {
-  margin-top: 100rpx;
+  margin-top: 50rpx;
   text-align: center;
   padding-top: 30rpx;
   background: white;
@@ -54,34 +54,46 @@
 .lower-text {
   width: 550rpx;
   font-size: 30rpx;
-  padding: 0 100rpx;
+  padding: 0 50rpx;
 }
 
 .buttons {
-  margin-left: 20rpx;
   width: 100%;
   bottom: 0;
+  display: flex;
 }
 
 .record-button {
-  margin-left: 50rpx;
+  margin-left: 30rpx;
   margin-top: 10rpx;
-  width: 200rpx;
-  height: 180rpx;
+  width: 150rpx;
+  flex: 1;
 }
 
 .next-button {
-  margin-left: 200rpx;
+  margin-left: 10rpx;
   margin-top: 10rpx;
-  width: 200rpx;
-  height: 180rpx;
+  width: 150rpx;
+  flex: 1;
 }
 
-.recording-progress {
-  margin: 20rpx 60rpx;
-  margin-top: 20rpx;
+.countDownClock {
+  margin: 20rpx 0;
+  height: 180rpx;
+  width: 100rpx;
+  text-align: center;
+  flex: 1;
+}
+
+.text-swiper {
+  height: 400rpx;
+  width: 650rpx;
+  margin: 100rpx 50rpx;
+}
+
+.text-swiper-item {
   height: 100rpx;
-  width: 550rpx;
+  width: 650rpx;
 }
 
 

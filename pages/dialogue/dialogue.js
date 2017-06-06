@@ -7,7 +7,7 @@ Page({
   data: {
     isRecordStart: false,
     isRecordOver: false,
-    isUploadOver: false,
+    isUploadOver: true,
     showText: [{
       id: 0,
       upperText: 'Oh',
@@ -80,7 +80,13 @@ Page({
     h_id: 0,
     map_id: 0,
     img_id: 0,
-    grade: 0
+    grade: 0,
+    clock: '',
+    isRecordBegin: false,
+    autoplay: true,
+    interval: 5000,
+    duration: 5000,
+    isPause: false
   },
 
   /**
@@ -168,27 +174,20 @@ Page({
     })
   },
 
-  // countDown: function() {
-  //   var _this = this;
-  //   if (_this.data.timeRemain == 0) {
-  //     wx.stopRecord()
-      
-  //   } else {
-  //     setTimeout(function(){
-  //       _this.setData({
-  //         timeRemain: _this.data.timeRemain - 1,
-  //         rate: _this.data.timeRemain / _this.data.showText[_this.data.currentIndex].timeLimit
-  //       });
-        
-  //       _this.countDown();
-  //     }, 10);
-  //   }
-  // },
+  dateFormat: function(second) {
+    var min = "00";
+    var sec = second / 1000;
+    if (sec < 10)  return min + ":" + "0" + sec;
+    else return min + ":" + sec;
+  },
 
-  recordClick: function(options) {
+  countDown: function() {
     var _this = this;
-    var count = 0;
     _this.setData({
+      clock: _this.dateFormat(_this.data.timeRemain)
+    });
+    if (!_this.data.isRecordBegin) {
+      _this.setData({
       hidden: false,
     });
     wx.startRecord({
@@ -200,7 +199,6 @@ Page({
         _this.setData({
           tempFilePath: res.tempFilePath
         })
-        console.log(_this.data.tempFilePath);
       },
       fail: function(res) {
         // wx.showToast({
@@ -209,39 +207,107 @@ Page({
         // })
       }
     });
-    var recordInterval = setInterval(function(){
-      if (count == _this.data.showText[_this.data.currentIndex].timeLimit / 1000 || _this.data.timeRemain <= 0) {
-        clearInterval(recordInterval);
-        count = 0;
-        wx.stopRecord();
-        _this.showModel();
-      } else {
-        count++;
-        _this.drawProgress(500 / (_this.data.showText[_this.data.currentIndex].timeLimit / 500), count);
+    _this.setData({
+      isRecordBegin: true
+    })
+    }
+    if (_this.data.timeRemain <= 0) {
+      wx.stopRecord();
+      // _this.showModel();
+      clearTimeout();
+      _this.setData({
+        hidden: true,
+        isRecordOver: true
+      })
+      return ;
+    } else {
+      setTimeout(function(){
         _this.setData({
-          timeRemain: _this.data.timeRemain - 1000,
-          rate: _this.data.timeRemain / _this.data.showText[_this.data.currentIndex].timeLimit
+          timeRemain: _this.data.timeRemain - 100
         });
-        console.log(_this.data.timeRemain);
-        console.log(count);
-      }
-    }, 1000);
+        _this.countDown();
+      }, 100);
+    }
+  },
+
+  
+
+  recordClick: function(options) {
+
+    this.countDown();
+    // _this.setData({
+    //   hidden: false,
+    // });
+    // wx.startRecord({
+    //   success: function(res) {
+    //     // wx.showToast({
+    //     //   title: 'success',
+    //     //   duration: 1000
+    //     // })
+    //     _this.setData({
+    //       tempFilePath: res.tempFilePath
+    //     })
+    //   },
+    //   fail: function(res) {
+    //     // wx.showToast({
+    //     //   title: 'failed',
+    //     //   duration: 1000
+    //     // })
+    //   }
+    // })      
   },
 
   nextClick: function(options) {
     var _this = this;
-    if (_this.data.pageCount > _this.data.currentIndex) {
-      _this.setData({
+    if (_this.data.currentIndex == _this.data.pageCount) {
+
+    } else {
+        _this.setData({
+        autoplay: false,
         currentIndex: _this.data.currentIndex + 1
-      }),
-      _this.refreshPage();
-    } else if (_this.data.pageCount == this.data.currentIndex){
-      wx.redirectTo({
-        // url: '../grade/grade?grade_id=' + _this.data.grade
-        url: '../grade/grade'
       })
     }
-  }, 
+  },
+
+  autoClick: function() {
+    this.setData({
+      autoplay: true,
+      isPause: false
+    })
+  },
+
+  pauseClick: function() {
+    this.setData({
+      autoplay: false,
+      isPause: true
+    })
+  },
+
+  manualClick: function() {
+    if (this.data.currentIndex == this.data.pageCount) {
+      wx.redirectTo({
+        url:''
+      })
+    } else {
+      this.setData({
+        currentIndex: this.data.currentIndex + 1
+      })
+    } 
+  },
+
+
+    
+    // if (_this.data.pageCount > _this.data.currentIndex) {
+    //   _this.setData({
+    //     currentIndex: _this.data.currentIndex + 1
+    //   }),
+    //   _this.refreshPage();
+    // } else if (_this.data.pageCount == this.data.currentIndex){
+    //   wx.redirectTo({
+    //     // url: '../grade/grade?grade_id=' + _this.data.grade
+    //     url: '../grade/grade'
+    //   })
+    // }
 
   /**
    * 生命周期函数--监听页面显示
@@ -254,7 +320,8 @@ Page({
       uploading_hidden: true,
       rate: 0,
       tempFilePath: '',
-      timeRemain: this.data.showText[this.data.currentIndex].timeLimit
+      timeRemain: this.data.showText[this.data.currentIndex].timeLimit,
+      progress_width: 0
     })
   }
 

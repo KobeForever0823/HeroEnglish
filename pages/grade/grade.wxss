@@ -29,7 +29,7 @@
 
 .score-upper-text {
   text-align: center;
-  left: 300rpx;
+  left: 280rpx;
   top: 60rpx;
   position: absolute;
 }
