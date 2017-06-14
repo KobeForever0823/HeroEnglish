@@ -1,20 +1,26 @@
-<!--pages/grade/grade.wxml-->
+<!--grade.wxml-->
 <view class="grade-container">
-  <scroll-view class="scroll-view_G" scroll-y="true">
-    <view class="scroll-view-item_G">
-      <text class="score-upper-text">Your Score</text>
-      <canvas class="cir" canvas-id="canvasArc"/>
-      <view id="score">{{score * 100}}%</view>
+  <view class="light">
+    <image mode="widthFix" src="../../images/ScoreCard/Page4-BackLight.png"/>
+  </view>
+  <view class="grade-description">
+    <view class="grade-stars" wx:if="{{score == 0}}">
+        <image mode="widthFix" class="star-img" src="../../images/ScoreCard/Page4-NoStars.png"></image>
     </view>
-  <view class="scroll-view-item_G">
-      <text class="score-lower-text">Detailed Score</text>
-      <view class="progress-bar">
-        <progress class="progress-bar-item"  percent="{{progress1}}" stroke-width="10" color="red" active="true"/>
-        <progress class="progress-bar-item"  percent="{{progress2}}"stroke-width="10" color="red" active="true"/>
-        <progress class="progress-bar-item"  percent="{{progress3}}" stroke-width="10" color="red" active="true"/>
-      </view>
+    <view class="grade-stars" wx:if="{{score > 0 && score <= 30}}">
+      <image mode="widthFix" class="star-img" src="../../images/ScoreCard/Page4-OneStar.png"></image>
+    </view>
+    <view class="grade-stars" wx:if="{{score > 30 && score <= 60}}">
+      <image mode="widthFix" class="star-img" src="../../images/ScoreCard/Page4-TwoStars.png"></image>
+    </view>
+    <view class="grade-stars" wx:if="{{score > 60 && score <= 100}}">
+      <image mode="widthFix" class="star-img" src="../../images/ScoreCard/Page4-ThreeStars.png"></image>
+    </view>
   </view>
-  <view class="scroll-view-item_G">
+  <view class="score-container">
+    <text class="score-text">{{score}}</text>
   </view>
-  </scroll-view>
+  <navigator class="home-button-navigator" url="/pages/home/home" open-type="reLaunch">
+    <image mode="widthFix" class="home-button-img" src="../../images/ScoreCard/Page3-Home.png"></image>
+  </navigator>
 </view>

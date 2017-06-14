@@ -1,20 +1,15 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/grade/grade",
+    "pages/result/result",
     "pages/dialogue/dialogue",
-    
-    
-    "pages/map/map",
-    
-    "pages/character/character",
-    
-    "pages/component/footbar/footbar"
+    "pages/grade/grade",
+    "pages/map/map"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "Hero English",
+    "navigationBarTitleText": "Riki English",
     "navigationBarTextStyle": "white"
   }
 }

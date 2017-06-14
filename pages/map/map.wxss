@@ -1,15 +1,69 @@
 /* map.wxss */
-.scroll-view_M {
-  padding: 20rpx;
-  white-space: nowrap;
-  text-align: center;
+.flash-cards-page {
+  padding-top: 0rpx;
+  min-height: 100vh;
+  background: url(http://img.027cgb.cn/20170608/2017610110414524110.png) no-repeat;
+  background-size: 750rpx 1344rpx;
+  position: fixed;
 }
 
-.scroll-view-item_M {
-  padding: 30rpx;
+.flash-cards-container {
+  padding-top: 100rpx;
+  width: 750rpx;
+  height: 900rpx;
   text-align: center;
+  background: url(http://img.027cgb.cn/20170608/20176122031671992221.png) no-repeat;
+  background-size: 600rpx 900rpx;
+  background-position: center;
+}
+
+.description {
+  top: 275rpx;
+  left: 300rpx;
+  font-size: 55rpx;
+  position: fixed;
+}
+
+.scroll-view_M {
+  padding: 160rpx 85rpx 20rpx;
+  white-space: nowrap;
+  width: 600rpx;
+  height: 500rpx;
+}
+
+.logo-img {
+  width: 180rpx;
+  height: 80rpx;
+  margin-left: 150rpx;
+  margin-top: 50rpx;
+}
+
+.english-img {
+  width: 180rpx;
+  height: 80rpx;
+  margin-left: 60rpx;
+  top: 60rpx;
+  position: absolute;
+}
+
+
+.scroll-view-item_M {
+  padding: 20rpx;
+  width: 550rpx;
 }
 
 .item-img {
-  height: 810rpx;
+  width: 125rpx;
+  height: 125rpx;
+}
+
+.text-container {
+  height: 250rpx;
+  width: 300rpx;
+}
+
+.cards_text {
+  left: -180rpx;
+  top: -20rpx;
+  position: relative;
 }

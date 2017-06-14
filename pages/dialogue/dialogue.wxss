@@ -1,100 +1,101 @@
 /* pages/dialogue/dialogue.wxss */
 .dialogue-container {
-  background-color: #2F5597;
-  min-height: 100vh;
+  padding-top: 0rpx;
+  background: url(http://img.027cgb.cn/20170608/2017610110414524110.png);
+  background-size: 750rpx 1344rpx;
+  position: fixed;
+  width: 750rpx;
+  height: 1344rpx;
 }
 
-.map-container {
+.words-swiper {
+  width: 700rpx;
+  margin: 10rpx 25rpx;
+  height: 800rpx;
+  background: url(http://img.027cgb.cn/20170610/20176114381177961105.png) no-repeat;
+  background-size: 700rpx 800rpx;
   text-align: center;
-  padding-top: 100rpx;
-  width: 100%;
-  height: 300rpx;
-  position: relative;
+  z-index: 4;
+  position: fixed;
 }
 
-.dialogue-map-img {
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+.words-swiper-item {
+  width: 650rpx;
+  padding-bottom: 50rpx;
+  z-index: 3;
 }
 
-.dialogue-button-img {
-  padding-top: 100rpx;
-  left: 0;
-  position: absolute;
-  width: 260rpx;
-  height: 260rpx;
-}
-
-.dialogue-upper-text-container {
-  margin-top: 50rpx;
-  padding-top: 30rpx;
-  background: white;
-  width: 100%;
-  height: 80rpx;
-  text-align: center;
-}
-
-.upper-text {
+.words-img {
   width: 550rpx;
-  font-size: 30rpx;
-  padding: 0 50rpx;
+  height: 650rpx;
+  padding-top: 75rpx;
+  z-index: 5;
+  left: 80rpx;
+  top: -5rpx;
+  position: fixed;
 }
 
-.dialogue-lower-text-container {
-  margin-top: 50rpx;
+.words-text {
+  font-size: 60rpx;
+  z-index: 4;
+  height: 200rpx;
+  padding-top: 175rpx;
   text-align: center;
-  padding-top: 30rpx;
-  background: white;
-  width: 100%;
-  height: 80rpx;
-}
-
-.lower-text {
-  width: 550rpx;
-  font-size: 30rpx;
-  padding: 0 50rpx;
 }
 
 .buttons {
-  width: 100%;
-  bottom: 0;
-  display: flex;
+  width: 450rpx;
+  height: 400rpx;
+  top: 750rpx;
+  left: 150rpx;
+  background: url(http://img.027cgb.cn/20170608/20176121721252836184.png);
+  background-size: 450rpx 400rpx;
+  position: fixed;
+  z-index: 2;
 }
 
 .record-button {
-  margin-left: 30rpx;
-  margin-top: 10rpx;
+  height: 150rpx;
   width: 150rpx;
-  flex: 1;
+  z-index: 4;
+  position: fixed;
+  left: 300rpx;
+  top: 1050rpx;
 }
 
-.next-button {
-  margin-left: 10rpx;
-  margin-top: 10rpx;
-  width: 150rpx;
-  flex: 1;
+.play-button {
+  height: 110rpx;
+  width: 110rpx;
+  top: 750rpx;
+  left: 320rpx;
+  position: fixed;
+  z-index: 5;
 }
 
-.countDownClock {
-  margin: 20rpx 0;
-  height: 180rpx;
-  width: 100rpx;
-  text-align: center;
-  flex: 1;
-}
-
-.text-swiper {
-  height: 400rpx;
-  width: 650rpx;
-  margin: 100rpx 50rpx;
-}
-
-.text-swiper-item {
+.back-button {
   height: 100rpx;
-  width: 650rpx;
+  width: 100rpx;
+  z-index: 4;
+  position: fixed;
+  left: 90rpx;
+  top: 925rpx;
 }
+
+.forward-button {
+  height: 100rpx; 
+  width: 100rpx;
+  z-index: 4;
+  position: fixed;
+  top: 925rpx;
+  left: 550rpx;
+}
+
+.img-swiper {
+  padding-left: 10rpx;
+  padding-top: -20rpx;
+}
+
+
 
 
 

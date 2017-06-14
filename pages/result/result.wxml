@@ -1,0 +1,23 @@
+<!--pages/grade/grade.wxml-->
+<view class="result-container">
+  <view class="result-text-container">
+    <image mode="widthFix" class="result-text" src="../../images/Bars/Page5-Results.png"></image>
+  </view>
+
+  <scroll-view class="scroll-view_G" scroll-y="true">
+    <view class="scroll-view-item_G" wx:for="{{result_list}}">
+      <view class="progress-bar">
+        <image mode="widthFix" src="{{item.result_img_url}}" class="phoning-img"></image>
+        <view class="progress-background">
+          <progress class="progress-bar-item"  percent="{{item.result_progress}}" stroke-width="12" color="red" active="true"/>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <navigator class="home-button-navigator" url="/pages/home/home" open-type="reLaunch"> 
+    <image mode="widthFix" src="../../images/Bars/Page5-PracticeButton.png" class="home-button"></image>
+  </navigator>
+  
+  <image mode="widthFix" src="../../images/Bars/Page5-BottomIcon.png" class="brand-button"></image>
+</view>

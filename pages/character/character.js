@@ -1,49 +1,29 @@
 // character.js
+var domain = 'https://47281688.qcloud.la/index.php/V1/';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    map_list: [{
-      id: 0,
-      url: '../../images/MapImages/1.png',
-      text: 'Speak up',
-    },
-    {
-      id: 1,
-      url: '../../images/MapImages/2.png',
-      text: 'Harvard',
-    },
-    {
-      id: 2,
-      url: '../../images/MapImages/3.png',
-      text: 'MIT',
-    },
-    {
-      id: 3,
-      url: '../../images/MapImages/3.png',
-      text: 'ISM',
-    }],
+    map_list: [],
     map_id: 0,
-    h_id: 0,
-    buttonImage: [{
-      map_id: 0,
-      image: [{
-        img_id: 0,
-        img_url: '../../images/ButtonImages/Button1.png'
-      }, {
-          img_id: 1,
-          img_url: '../../images/ButtonImages/Button2.png'
-      }, {
-          img_id: 2,
-          img_url: '../../images/ButtonImages/Button3.png'
-      }, {
-          img_id: 3,
-          img_url: '../../images/ButtonImages/Button3.png'
-      }]
-    }]
+    banner_id: 0,
+    character_list: []
   },
+
+  getCharacter: function() {
+    var _this = this;
+    wx.request({
+      url: domain + 'character/getCharacter/' + map_id, 
+      success(res) {
+        _this.setData({
+          character_list: res.data
+        })
+      }
+    })
+  },  
 
   /**
    * 生命周期函数--监听页面加载

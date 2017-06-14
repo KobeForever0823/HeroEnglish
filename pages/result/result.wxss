@@ -1,0 +1,89 @@
+/* pages/grade/grade.wxss */
+.result-container {
+  padding-top: 0rpx;
+  background: url(http://img.027cgb.cn/20170608/2017610110414524110.png);
+  min-height: 100vh;
+  background-size: 750rpx 1344rpx;
+  position: fixed;
+  width: 750rpx;
+  height: 1344rpx;
+}
+
+.result-text-container {
+  width: 200rpx;
+  height: 100rpx;
+  position: fixed;
+  top: 80rpx;
+  left: 270rpx;
+}
+
+.result-text {
+  width: 200rpx;
+  height: 150rpx;
+}
+
+.scroll-view_G {
+  white-space: nowrap;
+  text-align: center;
+  top: 200rpx;
+  position: fixed;
+  width: 720rpx;
+  left: 15rpx;
+  height: 600rpx;
+}
+
+.scroll-view-item_G {
+  text-align: center;
+  width: 500rpx;
+  height: 150rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.phoning-img {
+  width: 100rpx;
+  height: 50rpx;
+  margin-top: 60rpx;
+  margin-left: 50rpx;
+}
+
+.progress-bar {
+  width: 100rpx;
+  padding-left: 80rpx;
+  text-align: center;
+}
+
+.progress-background {
+  width: 400rpx;
+  height: 50rpx;
+  margin-left: 150rpx;
+  margin-top: -80rpx;
+  background: url(http://img.027cgb.cn/20170610/2017613422407433177.png);
+  background-size: 400rpx 20rpx;
+  text-align: center;
+}
+
+.progress-bar-item {
+  width: 300rpx;
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+}
+
+.home-button-navigator {
+  position: fixed;
+  top: 870rpx;
+  left: 210rpx;
+}
+
+.home-button {
+  width: 300rpx;
+  height: 200rpx;
+}
+
+.brand-button {
+  position: fixed;
+  top: 1100rpx;
+  left: 210rpx;
+  width: 300rpx;
+  height: 150rpx;
+}

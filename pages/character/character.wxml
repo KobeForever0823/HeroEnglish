@@ -7,8 +7,8 @@
     <text class="middle-text">{{map_list[map_id].text}}</text>
   </view> 
     <scroll-view class="scroll-view_C" scroll-x="true" scroll-with-animation="true" >
-      <navigator class="scroll-view-item_C" url="../dialogue/dialogue?h_id={{h_id}}&&map_id={{map_id}}&&img_id={{idx.img_id}}" 
-      wx:for="{{buttonImage[map_id].image}}" wx:for-item="idx" >
+      <navigator class="scroll-view-item_C" url="../dialogue/dialogue?banner_id={{banner_id}}&&map_id={{map_id}}&&img_id={{idx.img_id}}" 
+      wx:for="{{character_list[map_id].image}}" wx:for-item="idx" >
         <image mode="widthFix" class="scroll-button-img" src="{{idx.img_url}}"></image>
       </navigator>
     </scroll-view>

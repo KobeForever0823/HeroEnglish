@@ -1,27 +1,30 @@
 // map.js
+var domain = 'https://47281688.qcloud.la/index.php/V1/';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    map_list: [{
-      h_id: 0,
-      image: [{
-       map_id: 0,
-       map_image_url: '../../images/MapImages/1.png'
-      }, {
-       map_id: 1,
-       map_image_url: '../../images/MapImages/2.png'
-      }, {
-       map_id: 2,
-       map_image_url: '../../images/MapImages/3.png'
-      }, {
-       map_id: 3,
-       map_image_url: '../../images/MapImages/4.png'
-      }]
-    }],
-    h_id: 0
+    map_id: 0,
+    cards_list: [],
+  },
+
+  getCharacterById: function() {
+    var _this = this;
+    wx.request({
+      url: domain + 'character/getCharacter/' + _this.data.map_id,
+      success(res) {
+        console.log(res.data);
+        console.log(_this.data.map_id);
+        _this.setData({
+          card_list: res.data
+        })
+      },
+      fail(error) {
+      }
+    })
   },
 
   /**
@@ -29,8 +32,9 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      h_id: options.h_id
+      map_id: options.map_id
     })
+    this.getCharacterById();
   },
 
   /**

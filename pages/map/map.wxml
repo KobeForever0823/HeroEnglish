@@ -1,11 +1,19 @@
 <!--map.wxml-->
-<view class="map-page">
-  <scroll-view class="scroll-view_M" scroll-y="true" scroll-with-animation="true" >
-    <navigator class="scroll-view-item_M" wx:for="{{map_list[h_id].image}}" wx:for-item="item" url="../character/character?h_id={{h_id}}&&map_id={{item.map_id}}">
-      <image mode="widthFix" class="item-img" src="{{item.map_image_url}}"></image>
-    </navigator>
-  </scroll-view>
+<view class="flash-cards-page">
+  <view class="header-container">
+    <image mode="widthFix" class="logo-img" src="../../images/Home/Riki-Page1Logo.png"></image>
+    <image mode="widthFix" class="english-img" src="../../images/Home/Riki-Page1English.png"></image>
+  </view> 
+  <view class="flash-cards-container">
+    <scroll-view class="scroll-view_M" scroll-y="true" scroll-with-animation="true">
+      <block wx:for="{{cards_list}}">
+        <navigator class="scroll-view-item_M" url="../dialogue/dialogue?map_id={{item.map_id}}&&cards_id={{item.character_id}}" open-type="redirect">
+          <image mode="widthFix" class="item-img" src="{{item.character_url}}"></image>
+          <image mode="widthFix" class="text-container" src="../../images/FlashCard/Riki-Page2boardiconblue.png"></image>
+          <text class="cards_text">{{item.character_name}}</text>
+        </navigator>
+        </block>
+    </scroll-view>
+  </view>
 </view>
 
-<!--<import src="../component/footbar/footbar.wxml" />
-<template is="footbar"></template>-->

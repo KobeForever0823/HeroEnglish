@@ -1,22 +1,25 @@
 <!--home.wxml-->
 <view class="page">
-  <view class="top-container">
-    <image mode="widthFix" class="top-img" src="../../../images/Home/1.png"></image>
+  <view class="header-container">
+    <image mode="widthFix" class="logo-img" src="../../images/Home/Riki-Page1Logo.png"></image>
+    <image mode="widthFix" class="english-img" src="../../images/Home/Riki-Page1English.png"></image>
+  </view> 
+   
+  <swiper autoplay="{{autoplay}}" interval="{{interval}}" 
+    duration="{{duration}}" class="home-swiper"> 
+    <block wx:for="{{home_img_list}}">
+      <swiper-item class="home-swiper-item">
+        <image class="middle-img" mode="widthFix" src="{{item.home_img_url}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="buttons">
+    <navigator class="practice-button-navigator" url="/pages/map/map?story_id={{story_id}}&&map_id={{0}}" open-type="redirect">
+      <image class="practice-button" mode="widthFix" src="{{story_select[0].map_url}}"></image>
+    </navigator>
+    <navigator class="test-button-navigator" url="/pages/dialogue/dialogue?story_id={{story_id}}&&map_id={{1}}&&dialog_id={{0}}" open-type="redirect">
+      <image class="test-button" mode="widthFix" src="{{story_select[1].map_url}}"></image>
+    </navigator>
   </view>
-
-  <view style="height: 380rpx;" class="takeplace"></view>
-
-  <view class="options">
-    <scroll-view class="scrol-view_H" scroll-y="true" scroll-with-animation="true" >
-      <navigator url="/pages/map/map?h_id={{item.h_id}}" class="scroll-view-item_H" wx:for="{{home_img_list}}" open-type="navigate">
-        <image class="home-img" mode="widthFix" src="{{item.h_url}}" ></image>
-      </navigator>
-    </scroll-view>
-  </view>
-  
-  <div class="gradient"></div>
-
 </view>
-
-<import src="../component/footbar/footbar.wxml" />
-<template is="footbar"></template>

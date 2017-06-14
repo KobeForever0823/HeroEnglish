@@ -1,28 +1,44 @@
 // home.js
+var domain = 'https://47281688.qcloud.la/index.php/V1/';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    home_img_list: [
-    {
-      h_id: 0,
-      h_url: '../../../images/Home/2.png'
+    home_img_list: [{
+      id: 0,
+      home_img_url: '../../images/Home/Kiko.png',
     }, {
-      h_id: 1,
-      h_url: '../../../images/Home/3.png'
-    }, {
-      h_id: 2,
-      h_url: '../../../images/Home/3.png'
-    }]
+      id: 1, 
+      home_img_url: '../../images/Home/Kiko and Friends.png',
+    }],
+    story_select: [],
+    story_id: 0,
+  },
+
+
+  getMap: function() {
+    var _this = this;
+    wx.request({
+      url: domain + 'map/getMap/' + _this.data.story_id,
+      success(res) {
+        console.log(res.data);
+        _this.setData({
+          story_select: res.data
+        })
+      },
+      fail(error) {
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getMap()
   },
 
   /**
