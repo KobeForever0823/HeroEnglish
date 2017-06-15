@@ -2,7 +2,7 @@
 .flash-cards-page {
   padding-top: 0rpx;
   min-height: 100vh;
-  background: url(http://img.027cgb.cn/20170608/2017610110414524110.png) no-repeat;
+  background: url(http://i4.piimg.com/1949/b65cda0baecc59fd.png) no-repeat;
   background-size: 750rpx 1344rpx;
   position: fixed;
 }
@@ -12,7 +12,7 @@
   width: 750rpx;
   height: 900rpx;
   text-align: center;
-  background: url(http://img.027cgb.cn/20170608/20176122031671992221.png) no-repeat;
+  background: url(http://i4.piimg.com/1949/d7ac0a7c729b9c4a.png) no-repeat;
   background-size: 600rpx 900rpx;
   background-position: center;
 }

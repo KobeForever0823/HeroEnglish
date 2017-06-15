@@ -13,29 +13,55 @@ Page({
     story_id: 0,
     dialog_id: 0,
     test_id: 0,
+    score: [],
     dialog_record_url: [],
-    autoplay: false,
+    autoplay: true,
     interval: 5000,
     duration: 5000,
     currentIndex: 0,
     wordCount: 5,
     isFirstWord: false,
     isLastWord: false,
-    recordPath: ''
+    recordPath: '',
+    scoreChanged: false
   },
 
   getDialog: function() {
     var _this = this;
+    var record_url = [];
     wx.request({
       url: domain + 'dialog/getDialog/' + _this.data.character_id,
       success(res) {
-        console.log(res.data);
+        var tmp = res.data.data;
         _this.setData({
-          words_list: res.data.data
+          words_list: tmp
+        })
+        var wordsLength = _this.data.words_list.length;
+        _this.setData({
+          wordCount: wordsLength
+        })
+        
+        res.data.data.map((index) => record_url.push(index.dialog_record_url))
+        _this.setData({
+          dialog_record_url: record_url
         })
       }
     })
   },
+
+  getScore: function() {
+    var _this = this;
+    wx.request({
+      url: domain + 'score/getScore/' + _this.data.dialog_id,
+      success(res) {
+        _this.setData({
+          score: res.data.data.quality_score,
+          scoreChanged: true
+        })
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -83,7 +109,7 @@ Page({
     wx.stopRecord();
     console.log('end');
     setTimeout(function() {
-      var urls = domain + "record/score/" + _this.data.character_id + '/' +
+      var urls = domain + "score/score/" + _this.data.character_id + '/' +
         _this.data.dialog_id;
       wx.uploadFile({
         url: urls,
@@ -95,6 +121,7 @@ Page({
         success: function(res) {
           console.log('success');
           console.log(res);
+          _this.getScore();
         },
         fail: function(res) {
           console.log('fail');
@@ -102,14 +129,17 @@ Page({
         }
       }); 
     }, 1000);
+    _this.setData({
+      scoreChanged: false
+    })
+    _this.ifNavigate();
   },
 
-  playWordVoice: function(dialog_record_url) {
+  playWordVoice: function() {
     var _this = this;
-    _this.setData({
-    })
+    console.log(_this.data.dialog_record_url[_this.data.currentIndex]);
     wx.playVoice({
-      filePath: _this.data.dialog_record_url,
+      filePath: _this.data.dialog_record_url[_this.data.currentIndex],
       complete: function() {
       }
     })
@@ -149,53 +179,50 @@ Page({
     }
   },
 
-
-  // showModel: function() {
-  //   var _this = this;
-  //   _this.setData({
-  //     hidden: true
+  // showModel: function(score) {
+  //   var animation = wx.createAnimation({
+  //     duration: 200,
+  //     timingFunction: "linear",
+  //     delay: 0
   //   });
-  //   wx.showModal({
-  //     title: '',
-  //     content: '确认提交录音以获得成绩？',
-  //     showCancel: true,
-  //     cancelText: '取消',
-  //     confirmText: '确认',
-  //     success: function (res) {
-  //       if (res.confirm) {
-  //         _this.setData({
-  //           uploading_hidden: false,
-  //           hidden: true
-  //         }),
-  //         wx.uploadFile({
-  //           url:'',
-  //           filePath: _this.data.tempFilePath,
-  //           name: 'record_file',
-  //           success: function(res) {
-  //             _this.setData({
-  //             uploading_hidden: true,
-  //             isUploadOver: true
-  //           }),
-  //           wx.showToast({
-  //             title: '你这次的得分是' + _this.data.grade,
-  //             image: '',
-  //             duration: 1500
-  //           });
-  //           }
-  //         })
-  //       } else if (res.cancel) {
-  //         _this.drawProgress(0, 0);
-  //         _this.setData({
-  //           hidden: true,
-  //           uploading_hidden: true,
-  //           isUploadOver: true,
-  //           isRecordOver: false,
-  //           timeRemain: _this.data.showText[_this.data.currentIndex].timeLimit
-  //         })
-  //       }
-  //     }
+    
+  //   this.animation = animation;
+  //   animation.opacity(0).rorateX(-100).step();
+
+  //   this.setData({
+  //     animationData: animation.export()
   //   })
+
+  //   setTimeout(function() {
+  //     animation.opacity(1).rotateX(0).step();
+  //     this.setData({
+  //       animationData: animation
+  //     })
+  //   }.bind(this), 200)
   // },
+
+
+  ifNavigate: function() {
+    var _this = this;
+    if (_this.data.currentIndex == _this.data.wordCount) {
+      if (_this.data.map_id == 0) {
+        wx.redirectTo({
+          url: '/pages/grade/grade?map_id=' + _this.data.map_id + '&character_id=' + _this.data.character_id
+            + '&score=' + _this.data.score,
+          complete: function(res) {
+          }
+        })
+      } else {
+        wx.redirectTo({
+          url: '/pages/result/result?map_id=' + _this.data.map_id + '&character_id=' + _this.data.character_id,
+          complete: function(res) {
+          }
+        })
+      }
+    }
+  },
+
+
 
   
   /**

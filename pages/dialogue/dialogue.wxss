@@ -1,7 +1,7 @@
 /* pages/dialogue/dialogue.wxss */
 .dialogue-container {
   padding-top: 0rpx;
-  background: url(http://img.027cgb.cn/20170608/2017610110414524110.png);
+  background: url(http://i4.piimg.com/1949/b65cda0baecc59fd.png);
   background-size: 750rpx 1344rpx;
   position: fixed;
   width: 750rpx;
@@ -12,7 +12,7 @@
   width: 700rpx;
   margin: 10rpx 25rpx;
   height: 800rpx;
-  background: url(http://img.027cgb.cn/20170610/20176114381177961105.png) no-repeat;
+  background: url(http://i4.piimg.com/1949/39c3617f169ca497.png) no-repeat;
   background-size: 700rpx 800rpx;
   text-align: center;
   z-index: 4;
@@ -48,7 +48,7 @@
   height: 400rpx;
   top: 750rpx;
   left: 150rpx;
-  background: url(http://img.027cgb.cn/20170608/20176121721252836184.png);
+  background: url(http://i4.piimg.com/1949/1931b5d7a47cfee9.png);
   background-size: 450rpx 400rpx;
   position: fixed;
   z-index: 2;

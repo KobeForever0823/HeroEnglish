@@ -7,7 +7,7 @@
   <view class="flash-cards-container">
     <scroll-view class="scroll-view_M" scroll-y="true" scroll-with-animation="true">
       <block wx:for="{{cards_list}}">
-        <navigator class="scroll-view-item_M" url="../dialogue/dialogue?map_id={{item.map_id}}&&cards_id={{item.character_id}}" open-type="redirect">
+        <navigator class="scroll-view-item_M" url="../dialogue/dialogue?map_id={{item.map_id}}&&character_id={{item.character_id}}" open-type="redirect">
           <image mode="widthFix" class="item-img" src="{{item.character_url}}"></image>
           <image mode="widthFix" class="text-container" src="../../images/FlashCard/Riki-Page2boardiconblue.png"></image>
           <text class="cards_text">{{item.character_name}}</text>

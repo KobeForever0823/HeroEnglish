@@ -4,7 +4,13 @@
     duration="{{duration}}" class="words-swiper" current="{{currentIndex}}">
     <block wx:for="{{words_list}}">
       <swiper-item class="words-swiper-item">
-        <image class="words-img" src="{{item.dialog_img_url}}"></image>
+        <image class="words-img" wx:if="{{scoreChanged == false}}" src="{{item.dialog_img_url}}"></image>
+        <image class="words-img" wx:if="{{scoreChanged == true && score >= 0 && score < 40}}"
+          src="../../images/Tester/Page3-TryAgainCard.png"></image>
+        <image class="words-img" wx:if="{{scoreChanged == true && score >= 40 && score < 70}}"
+          src="../../images/Tester/Page3-OKCard.png"></image>
+        <image class="words-img" wx:if="{{scoreChanged == true && score >= 70 && score < 100}}" 
+          src="../../images/Tester/Page3-GoodCard.png"></image>
       </swiper-item>
     </block>
   </swiper>

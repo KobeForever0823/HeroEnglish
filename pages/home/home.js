@@ -9,10 +9,10 @@ Page({
   data: {
     home_img_list: [{
       id: 0,
-      home_img_url: '../../images/Home/Kiko.png',
+      home_img_url: '../../images/Home/Kiko and Friends.png'
     }, {
       id: 1, 
-      home_img_url: '../../images/Home/Kiko and Friends.png',
+      home_img_url: '',
     }],
     story_select: [],
     story_id: 0,

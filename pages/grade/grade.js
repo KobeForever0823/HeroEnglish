@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    score: 70
+    character_id: 0,
+    dialog_id: 0,
+    score: 0
+  },
+
+  getScoreByDialog: function() {
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      score: options.score
+    })
   },
 
   /**

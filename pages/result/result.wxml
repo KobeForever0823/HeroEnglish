@@ -9,7 +9,7 @@
       <view class="progress-bar">
         <image mode="widthFix" src="{{item.result_img_url}}" class="phoning-img"></image>
         <view class="progress-background">
-          <progress class="progress-bar-item"  percent="{{item.result_progress}}" stroke-width="12" color="red" active="true"/>
+          <progress class="progress-bar-item"  percent="{{item.result_progress}}" stroke-width="18" color="red" active="true"/>
         </view>
       </view>
     </view>

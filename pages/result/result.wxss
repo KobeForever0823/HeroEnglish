@@ -1,8 +1,7 @@
 /* pages/grade/grade.wxss */
 .result-container {
   padding-top: 0rpx;
-  background: url(http://img.027cgb.cn/20170608/2017610110414524110.png);
-  min-height: 100vh;
+  background: url(http://i4.piimg.com/1949/b65cda0baecc59fd.png);
   background-size: 750rpx 1344rpx;
   position: fixed;
   width: 750rpx;
@@ -58,14 +57,14 @@
   height: 50rpx;
   margin-left: 150rpx;
   margin-top: -80rpx;
-  background: url(http://img.027cgb.cn/20170610/2017613422407433177.png);
+  background: url(http://i4.piimg.com/1949/579e99f7c58111af.png);
   background-size: 400rpx 20rpx;
   text-align: center;
 }
 
 .progress-bar-item {
-  width: 300rpx;
-  margin-left: 40rpx;
+  width: 370rpx;
+  margin-left: 10rpx;
   margin-top: 20rpx;
 }
 
