@@ -44,6 +44,7 @@
   height: 50rpx;
   margin-top: 60rpx;
   margin-left: 50rpx;
+  position:relative;
 }
 
 .progress-bar {
@@ -54,18 +55,23 @@
 
 .progress-background {
   width: 400rpx;
-  height: 50rpx;
-  margin-left: 150rpx;
-  margin-top: -80rpx;
-  background: url(http://i4.piimg.com/1949/579e99f7c58111af.png);
-  background-size: 400rpx 20rpx;
+  /*height: 50rpx;*/
+  margin-left:130rpx;
+  margin-top:-55rpx;
+  /*background: url(http://i4.piimg.com/1949/579e99f7c58111af.png);*/
+  /*background-size: 400rpx 20rpx;*/
   text-align: center;
+  border-top-right-radius: 200rpx;
+  border-top-left-radius: 200rpx;
+  border-bottom-right-radius: 200rpx;
+  border-bottom-left-radius: 200rpx;
+  overflow: hidden;
 }
 
 .progress-bar-item {
-  width: 350rpx;
-  margin-left: 50rpx;
-  margin-top: 20rpx;
+  width: 400rpx;
+  /*margin-left: 50rpx;*/
+  /*margin-top: 20rpx;*/
 }
 
 .home-button-navigator {

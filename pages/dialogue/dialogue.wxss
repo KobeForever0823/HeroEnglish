@@ -23,6 +23,7 @@
   height: 630rpx;
   padding-left: 90rpx;
   padding-right: 1000rpx;
+  pointer-events: none;
 }
 
 .words-swiper-item {

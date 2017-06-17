@@ -17,7 +17,7 @@ Page({
     dialog_record_url: [],
     autoplay: false,
     interval: 30000,
-    duration: 10000,
+    duration: 1000,
     currentIndex: 0,
     wordCount: 5,
     isFirstWord: true,
