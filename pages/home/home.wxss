@@ -4,6 +4,8 @@ page {
   min-height: 100vh;
   background: url(http://i4.piimg.com/1949/b65cda0baecc59fd.png) no-repeat;
   background-size: 750rpx 1344rpx;
+  width: 750rpx;
+  height: 1344rpx;
 }
 
 .header-container {
@@ -22,9 +24,8 @@ page {
 .english-img {
   width: 150rpx;
   height: 70rpx;
-  left: 280rpx;
-  top: 225rpx;
-  position: fixed;
+  margin-top: 20rpx;
+  margin-left: 290rpx;
 }
 
 .home-swiper {

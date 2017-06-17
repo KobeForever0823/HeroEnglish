@@ -15,7 +15,7 @@ Page({
       home_img_url: '',
     }],
     story_select: [],
-    story_id: 0,
+    story_id: 1,
   },
 
 
@@ -24,9 +24,9 @@ Page({
     wx.request({
       url: domain + 'map/getMap/' + _this.data.story_id,
       success(res) {
-        console.log(res.data);
+        console.log(res.data.data);
         _this.setData({
-          story_select: res.data
+          story_select: res.data.data
         })
       },
       fail(error) {

@@ -55,15 +55,16 @@
 .item-img {
   width: 125rpx;
   height: 125rpx;
+  padding-left: 60rpx;
 }
 
 .text-container {
-  height: 250rpx;
+  height: 100rpx;
   width: 300rpx;
 }
 
 .cards_text {
-  left: -180rpx;
-  top: -20rpx;
+  left: -200rpx;
+  top: -30rpx;
   position: relative;
 }

@@ -15,10 +15,10 @@
   </swiper>
 
   <view class="buttons">
-    <navigator class="practice-button-navigator" url="/pages/map/map?story_id={{story_id}}&&map_id={{0}}" open-type="redirect">
+    <navigator class="practice-button-navigator" url="/pages/map/map?story_id={{story_id}}&&map_id={{1}}" open-type="redirect">
       <image class="practice-button" mode="widthFix" src="{{story_select[0].map_url}}"></image>
     </navigator>
-    <navigator class="test-button-navigator" url="/pages/dialogue/dialogue?story_id={{story_id}}&&map_id={{1}}&&character_id={{1}}" open-type="redirect">
+    <navigator class="test-button-navigator" url="/pages/dialogue/dialogue?story_id={{story_id}}&&map_id={{2}}&&character_id={{1}}" open-type="redirect">
       <image class="test-button" mode="widthFix" src="{{story_select[1].map_url}}"></image>
     </navigator>
   </view>

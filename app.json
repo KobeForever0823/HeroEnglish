@@ -2,8 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/result/result",
-    "pages/dialogue/dialogue",
     "pages/grade/grade",
+    "pages/dialogue/dialogue",
     "pages/map/map"
   ],
   "window": {

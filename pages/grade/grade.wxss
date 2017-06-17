@@ -2,7 +2,7 @@
 .grade-container {
   padding-top: 0rpx;
   min-height: 100vh;
-  background: url(http://img.027cgb.cn/20170608/2017610110414524110.png) no-repeat;
+  background: url(http://i4.piimg.com/1949/b65cda0baecc59fd.png) no-repeat;
   background-size: 750rpx 1344rpx;
   position: fixed;
   width: 750rpx;
@@ -15,7 +15,7 @@
 }
 
 .grade-description {
-  background: url(http://img.027cgb.cn/20170603/20176128751821910492.png) no-repeat;
+  background: url(http://i4.piimg.com/1949/940de4ab53a6e851.png) no-repeat;
   background-size: 450rpx 500rpx;
   left: 150rpx;
   top: 400rpx;
@@ -49,11 +49,11 @@
   position: fixed;
   width: 50rpx;
   height: 50rpx;
-  left: 350rpx;
+  left: 325rpx;
   top: 800rpx;
 }
 
 .home-button-img {
-  width: 50rpx;
-  height: 50rpx;
+  width: 80rpx;
+  height: 80rpx;
 }

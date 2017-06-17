@@ -1,21 +1,26 @@
 <!--pages/dialogue/dialogue.wxml-->
 <view class="dialogue-container">
-  <swiper vertical="true" autoplay="{{autoplay}}" interval="{{interval}}" 
-    duration="{{duration}}" class="words-swiper" current="{{currentIndex}}">
-    <block wx:for="{{words_list}}">
-      <swiper-item class="words-swiper-item">
-        <image class="words-img" wx:if="{{scoreChanged == false}}" src="{{item.dialog_img_url}}"></image>
-        <image class="words-img" wx:if="{{scoreChanged == true && score >= 0 && score < 40}}"
-          src="../../images/Tester/Page3-TryAgainCard.png"></image>
-        <image class="words-img" wx:if="{{scoreChanged == true && score >= 40 && score < 70}}"
-          src="../../images/Tester/Page3-OKCard.png"></image>
-        <image class="words-img" wx:if="{{scoreChanged == true && score >= 70 && score < 100}}" 
-          src="../../images/Tester/Page3-GoodCard.png"></image>
-      </swiper-item>
-    </block>
-  </swiper>
+  <view class="swiper-container">
+    <swiper autoplay="{{autoplay}}" interval="{{interval}}" 
+      duration="{{duration}}" class="words-swiper" current="{{currentIndex}}">
+      <block wx:for="{{words_list}}">
+        <swiper-item class="words-swiper-item">
+          <image class="words-img" wx:if="{{scoreChanged == false}}" src="{{item.dialog_img_url}}"></image>
+          <image class="words-img" wx:if="{{scoreChanged == true && score >= 0 && score < 40}}"
+            src="../../images/Tester/Page3-TryAgainCard.png"></image>
+          <image class="words-img" wx:if="{{scoreChanged == true && score >= 40 && score < 70}}"
+            src="../../images/Tester/Page3-OKCard.png"></image>
+          <image class="words-img" wx:if="{{scoreChanged == true && score >= 70 && score < 100}}" 
+            src="../../images/Tester/Page3-GoodCard.png"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
 
-   
+  <view class="play-button-container" bindtap="playWordVoice"> 
+    <image mode="widthFix" class="play-button" src="../../images/Tester/PlayButton.png" ></image>
+  </view>
+
   <view class="buttons">
     <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="img-swiper" 
       current="{{currentIndex}}">
@@ -27,11 +32,12 @@
         </swiper-item>
       </block>
     </swiper>
-    <image mode="widthFix" class="play-button" src="../../images/Tester/PlayButton.png" bindtap="playWordVoice"></image>
-    <image mode="widthFix" class="back-button" wx:if="{{isFirstWord}}" src="../../images/Tester/Page3-backbuttonyellow.png"></image>
-    <image mode="widthFix" class="back-button" wx:if="{{!isFirstWord}}" src="../../images/Tester/Page3-backbutton.png" bindtap="backButtonClick"></image>
-    <image mode="widthFix" class="forward-button" wx:if="{{isLastWord}}" src="../../images/Tester/Page3-Nextbuttonyellow.png"></image>
-    <image mode="widthFix" class="forward-button" wx:if="{{!isLastWord}}" src="../../images/Tester/Page3-NextButton.png" bindtap="forwardButtonClick"></image>
+    
+    <image mode="widthFix" class="back-button" wx:if="{{isFirstWord == true || gettingScore == true}}" src="../../images/Tester/Page3-backbuttonyellow.png"></image>
+    <image mode="widthFix" class="back-button" wx:if="{{!isFirstWord && gettingScore == false}}" src="../../images/Tester/Page3-backbutton.png" bindtap="backButtonClick"></image>
+    <image mode="widthFix" class="forward-button" wx:if="{{isLastWord == true || gettingScore == true}}" src="../../images/Tester/Page3-Nextbuttonyellow.png"></image>
+    <image mode="widthFix" class="forward-button" wx:if="{{!isLastWord && gettingScore == false}}" src="../../images/Tester/Page3-NextButton.png" bindtap="forwardButtonClick"></image>
     <image mode="widthFix" class="record-button" src="../../images/Tester/Page3-Mic.png" bindtouchstart="recordClick" bindtouchend="endRecord"></image>
+    
   </view>
 </view>

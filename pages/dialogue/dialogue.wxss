@@ -3,34 +3,39 @@
   padding-top: 0rpx;
   background: url(http://i4.piimg.com/1949/b65cda0baecc59fd.png);
   background-size: 750rpx 1344rpx;
-  position: fixed;
   width: 750rpx;
   height: 1344rpx;
 }
 
-.words-swiper {
+.swiper-container {
   width: 700rpx;
   margin: 10rpx 25rpx;
   height: 800rpx;
   background: url(http://i4.piimg.com/1949/39c3617f169ca497.png) no-repeat;
   background-size: 700rpx 800rpx;
-  text-align: center;
-  z-index: 4;
+  z-index: 2;
   position: fixed;
+  text-align: center;
+}
+
+.words-swiper {
+  width: 540rpx;
+  height: 630rpx;
+  padding-left: 90rpx;
+  padding-right: 1000rpx;
 }
 
 .words-swiper-item {
-  width: 650rpx;
-  padding-bottom: 50rpx;
   z-index: 3;
+  margin-left: -20rpx;
 }
 
 .words-img {
-  width: 550rpx;
-  height: 650rpx;
-  padding-top: 75rpx;
+  width: 500rpx;
+  height: 600rpx;
+  padding-top: 50rpx;
   z-index: 5;
-  left: 80rpx;
+  left: 35rpx;
   top: -5rpx;
   position: fixed;
 }
@@ -51,25 +56,31 @@
   background: url(http://i4.piimg.com/1949/1931b5d7a47cfee9.png);
   background-size: 450rpx 400rpx;
   position: fixed;
-  z-index: 2;
+  z-index: 1;
 }
 
 .record-button {
-  height: 150rpx;
+  height: 100rpx;
   width: 150rpx;
-  z-index: 4;
+  z-index: 6;
   position: fixed;
   left: 300rpx;
   top: 1050rpx;
 }
 
-.play-button {
-  height: 110rpx;
-  width: 110rpx;
-  top: 750rpx;
-  left: 320rpx;
+.play-button-container {
+  top: 715rpx;
+  left: 310rpx;
   position: fixed;
-  z-index: 5;
+  z-index: 3;
+  width: 120rpx;
+  height: 120rpx;
+  text-align: center;
+}
+
+.play-button {
+  height: 10rpx;
+  width: 60rpx;
 }
 
 .back-button {

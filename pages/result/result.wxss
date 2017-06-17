@@ -63,8 +63,8 @@
 }
 
 .progress-bar-item {
-  width: 370rpx;
-  margin-left: 10rpx;
+  width: 350rpx;
+  margin-left: 50rpx;
   margin-top: 20rpx;
 }
 

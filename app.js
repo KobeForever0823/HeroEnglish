@@ -43,7 +43,7 @@ App({
           url: 'https://47281688.qcloud.la/index.php/V1/home/getuid',
           success(response) {
             console.log(response)
-            wx.setStorageSync('userid', response.data)
+            wx.setStorageSync('user_id', response.data.data.user_id)
           }
         })
       },

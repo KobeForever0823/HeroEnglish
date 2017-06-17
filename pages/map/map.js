@@ -16,10 +16,9 @@ Page({
     wx.request({
       url: domain + 'character/getCharacter/' + _this.data.map_id,
       success(res) {
-        console.log(res.data);
-        console.log(_this.data.map_id);
+        console.log(res.data.data);
         _this.setData({
-          card_list: res.data
+          cards_list: res.data.data
         })
       },
       fail(error) {
